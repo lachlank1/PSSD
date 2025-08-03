@@ -1,45 +1,53 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <stdlib.h> 
 
 using namespace std;
 
 class ThrowTheBall{
+
     public:
         int timesThrown (int N, int M, int L){
-            if (N < 3 || N > 50){
-                cout << "Invalid N input" << endl;
-                exit(1);
-            }
-            if (M < 1 || M > 50){
-                cout << "Invalid M input" << endl;
-                exit(1);
-            }
-            if (L < 1 || L > N-1){
-                cout << "Invalid L input" << endl;
-                exit(1);
-            }
+            // if (N < 3 || N > 50){
+            //     cout << "Invalid N input" << endl;
+            //     exit(1);
+            // }
+            // if (M < 1 || M > 50){
+            //     cout << "Invalid M input" << endl;
+            //     exit(1);
+            // }
+            // if (L < 1 || L > N-1){
+            //     cout << "Invalid L input" << endl;
+            //     exit(1);
+            // }
             int totalCounter = 0;
             vector<int> individualCounter (N, 0);
-            
-            int i = 0;
+            int holdingTheBall = 0;
 
-            while (i <= N){
-                if (individualCounter[i] == M){
+            individualCounter[holdingTheBall] = 1;
+
+            while(true){
+                if (individualCounter[holdingTheBall] == M){
                     return totalCounter;
                     break;
                 }
-
-                if (individualCounter[i] % 2 == 0){
-                    individualCounter[i]++;
-                    totalCounter++;
-                    i -= L; 
+                if (individualCounter[holdingTheBall] % 2 == 0){
+                    holdingTheBall = holdingTheBall - L;
+                    if (holdingTheBall < 0){
+                        holdingTheBall = holdingTheBall + N;
+                    }
                 }else{
-                    individualCounter[i]++;
-                    totalCounter++;
-                    i += L;     
+                    holdingTheBall = holdingTheBall + L;
+                    if (holdingTheBall >= N){
+                        holdingTheBall = holdingTheBall - N;
+                    }
                 }
-            }
 
+                individualCounter[holdingTheBall]++;
+                totalCounter++;
+
+            }
             return totalCounter;
             
         }

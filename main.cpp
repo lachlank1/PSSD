@@ -6,12 +6,12 @@ int main(){
     
     
     // Inchworm inchworm;
-    // ThrowTheBall throwtheball
+    // ThrowTheBall throwtheball;
     StreetParking streetparking;
 
-    cout << streetparking.freeParks("hello") << endl;
+    cout << streetparking.freeParks("---B--S-D--S--") << endl;
 
-    // cout << throwtheball.timesThrown(5,3,2) << endl;
+    // cout << throwtheball.timesThrown(10,3,5) << endl;
 
 
 

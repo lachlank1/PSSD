@@ -1,0 +1,58 @@
+COME BACK AND TALK ABOUT COMPLEXIT
+
+
+
+Problem #1 (Inchworm)
+
+Initial Thoughts:
+To approach this problem, im firstly going to need some kind of loop that goes over the entire breach and a counter that counts
+how many leafs are eaten. I think a for loop will be the best approach as i will be easily able to increment accross the whole 
+branch by the rest value which is where the only spot where the inchworm stops. When at the each individual rest point, 
+i need to check if a leaf exists at this point that she can eat. I think i can do this by checking checking if the 
+current position (lets say i) % leaf spacing is equal to 0, meaning there is a leaf existing at this rest point if so, she will
+stop on this leaf and eat it, i will then have a counter which increments when she eats a leaf. 
+
+Reflection:
+I was able to solve this using the above strategy, it was essentially just a simple for loop. 
+
+
+Problem #2 (ThrowTheBall)
+
+Initial Thoughts:
+To solve this problem, i know that im going to need a counter of the total ball passes than will eventually be returned.
+I will also need an array of counters for each individual person that holds the ball. I think i can then approach the problem 
+by using a for loop that will loop over the amout of people in the group (M), then for each person in the group that holds the
+ball i will increment their individual counter aswell as the total counter of all passes. I will need some condition that checks 
+the amount of times each person has received the ball and then if that value is equal to M then the loop is broken and the total
+is returned. I will shift the position of who holds the ball by decrementing the current ball holder (lets say i) by the value of L 
+if the current ball holders count is even or incrementing the current ball holder by the value of L if their count is odd. 
+
+Reflection:
+I faced quite a bit of problem when approaching this problem with a for loop, i dont think it was the most logical initial
+thought as i wanted the loop to continue until the break condition was met, not for any other reason. I instead decided to use 
+a unconditional while loop, this allowed me to exit out of the loop only once the break condition was met. This in turn meant
+that i had to initialise the first ball holder outside of the loop. I also found that i needed to set the initial ball holder's 
+counter to be 1, as they will always have held the ball once. The next major issue i faced in my solution was the indexing, 
+i realised i needed a condition that checks whether the ball holder was greater than N (if shifting right) or less than 0 
+(if shifting left). Furthemore, i ended up using a vector over an array for the individual counter, as it was cleaner and easier to initialise how i 
+wanted to. 
+
+Problem #3 (StreetParking)
+
+Initial Thoughts:
+To solve this problem, i think i can use a brute force approach which checks the characters of the street string. 
+Using a for loop that loops over the length of the string and then checking if they are either D, S or B, 
+and then checking the previous and following characters to see if they are -. Also considering the necessary spaces needed,
+3 consecutive -'s before a B and 1 after, 2 consecutive -'s before a S 2 after and finally one on each side of a D. 
+
+Reflection:
+
+
+
+Problem #3 (CircularLine)
+
+Initial Thoughts:
+Brute Force approach, considering all of the elements in the array that are given and then compare all of the travel distances
+between all of them. This is a brute force approach and will have a poor average time complexity as it will firstly require 
+you to traverse the array and then depending on the amount of elements given continue to traverse to array this many times and 
+compare each time. 
